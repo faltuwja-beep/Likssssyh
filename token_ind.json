@@ -1,43 +1,4 @@
-import json
-import random
-import string
-
-def generate_random_token(length=64):
-    # Ek dummy ya placeholder token generate karne ke liye
-    letters = string.ascii_letters + string.digits
-    return ''.join(random.choice(letters) for _ in range(length))
-
-def generate_guest_entries(num_accounts=5):
-    accounts = []
-    print(f"🚀 Total {num_accounts} accounts generate kiye ja rahe hain, Maharaj...")
-    
-    for i in range(1, num_accounts + 1):
-        # Random UID ya Guest ID format
-        fake_uid = random.randint(100000000, 999999999)
-        token = generate_random_token()
-        
-        account_data = {
-            "index": i,
-            "uid": str(fake_uid),
-            "token": token,
-            "level": 8,  # Level 8 requirement target
-            "status": "Active"
-        }
-        accounts.append(account_data)
-        
-    return accounts
-
-def save_to_json(data, filename="token_bd.json"):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=4)
-    print(f"✅ Success! Saare entries `{filename}` file mein save ho gaye hain. 😈🔥")
-
-if __name__ == "__main__":
-    # Kitne accounts/tokens generate karne hain yahan set kar le
-    total_accounts_to_make = 10
-    
-    generated_data = generate_guest_entries(total_accounts_to_make)
-    save_to_json(generated_data, "token_ind.json")
+[
   {
     "token": "eyJhbGciOiJIUzI1NiIsInN2ciI6IjIiLCJ0eXAiOiJKV1QifQ.eyJhY2NvdW50X2lkIjoxODI5ODQzMjg5MCwibmlja25hbWUiOiJZZ3BiVGZ1S2dlTFcrdDJrMXFhSyIsIm5vdGlfcmVnaW9uIjoiTkEiLCJsb2NrX3JlZ2lvbiI6Ik5BIiwiZXh0ZXJuYWxfaWQiOiIyMzRhYmU3MDcyNWZkNjMxYjFlNWY3MTAwN2Q0OWZmZCIsImV4dGVybmFsX3R5cGUiOjQsInBsYXRfaWQiOjEsImNsaWVudF92ZXJzaW9uIjoiMS4xMzIuMyIsImNsaWVudF92ZXJzaW9uX2NvZGUiOiIyMDE5MTE4Njk1IiwiZW11bGF0b3Jfc2NvcmUiOjEwMCwiaXNfZW11bGF0b3IiOnRydWUsImNvdW50cnlfY29kZSI6IlVTIiwiZXh0ZXJuYWxfdWlkIjo3OTEyNTAwMDM0LCJyZWdfYXZhdGFyIjoxMDIwMDAwMDcsInNvdXJjZSI6MCwibG9ja19yZWdpb25fdGltZSI6MTc5MDIxNDQ1OSwiY2xpZW50X3R5cGUiOjIsInNpZ25hdHVyZV9tZDUiOiI3NDI4YjI1M2RlZmMxNjQwMThjNjA0YTFlYmJmZWJkZiIsInVzaW5nX3ZlcnNpb24iOjEsInJlbGVhc2VfY2hhbm5lbCI6ImFuZHJvaWQiLCJyZWxlYXNlX3ZlcnNpb24iOiJPQjU1IiwiZXhwIjoxNzkwMjQzMjcyfQ.2KJJo_dA_trQLHH0wo0H_1Hcr5bezEtUg_MiEmkZfH4"
   }
